@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="{% static 'css/contato.css' %}">
+</head>
+<body>
+    <aside class="menu">
+        <section class="main-content menu-content">
+            <h1><a href="/"><img id="logo" src="../static/img/logo.png" alt=""></a></h1>
+        </section> 
+    </aside>
+
+    <div class="menu-spacing"></div>
+    
+    <h1>Contato</h1>
+    
+    <div class="fale-conosco">
+        
+        <div class="form-container">
+            <h1>Fale Conosco</h1>
+            <form method="POST">
+                {% csrf_token %}    
+                <div class="form-group">
+                    <label>Nome:</label>
+                    <input type="text" class="form-control" id="nome" name="nome">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>   
+                <div class="form-group">
+                    <label>Mensagem:</label>
+                    <input type="text" class="form-control" id="msg" name="msg">
+                </div>           
+
+                <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                <a href="/" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Voltar</a>
+                
+            </form>
+        </div>      
+        <div class="contato">
+            <h1>Informações de Contato</h1>
+            <div class="informacoes">
+                <p>Tel: (81)99999.9999</p>
+                <p>Email: techinclude@techinclude.com</p>
+            </div>    
+        </div>
+        
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 por TechInclude. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="{% static 'css/area_restrita.css' %}">
+</head>
+<body>
+    <aside class="menu">
+        <section class="main-content menu-content">
+            <h1><a href="/"><img id="logo" src="../static/img/logo.png" alt=""></a></h1>
+            {% if user.is_authenticated %}
+            <p>Bem-vindo, {{ user.username }}!</p>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <p>Você não está logado.</p>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+
+        </section> 
+    </aside>
+
+    <div class="menu-spacing"></div>
+
+    <h1>Área Restrita</h1>
+    
+    <div class="area-restrita">
+        
+        
+        <div class="form-container">
+            <h1>Cadastros</h1>
+            <h2>Selecione qual o cadastro deseja fazer</h2>
+            <div class="btn-list center-buttons">
+                <a href="/cadastrar_pessoa" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Cadastrar Pessoa</a>
+                <a href="/cadastrar_funcao" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Cadastrar Funções</a>
+                <a href="/consulta_cnpj" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Cadastrar CNPJ</a>
+                
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h1>Atualizações</h1>
+            <h2>Selecione o que deseja atualizar</h2>
+            <div class="btn-list center-buttons">
+                <a href="/atualizar_pessoas" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Atualizar Pessoa</a>
+                <a href="/atualizar_funcao" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Atualizar Funções</a>            
+            </div>
+        </div> 
+    </div> 
+    
+    <div class="botoes">
+        <a href="/mapa" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Localizador de Pessoas</a>
+        <a href="/" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Voltar</a>
+    </div>
+    
+
+    <footer>
+        <section class="fale-conosco-footer">
+            <h3>Fale Conosco  </h3>
+            <p> | Tel: (81) 99999.9999 | </p>
+            <p>Email: techinclude@techinclude.com</p>   
+        </section>
+        <p>&copy; 2023 por TechInclude. Todos os direitos reservados.</p>
+    </footer>
+    
+</body>
+</html>

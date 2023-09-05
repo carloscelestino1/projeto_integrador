@@ -1,0 +1,320 @@
+:root{
+    --color-blue: rgb(0, 27, 46);
+    --color-white: #DBE0E7;
+    --color-orange: #FFA630;
+    --color-transparent: rgb(0, 27, 46);
+    --color-ligth-grey: #EEEEEE;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+html{
+    scroll-behavior: smooth;
+    scroll-behavior: auto;
+}
+body {
+    background-image: url('../static/img/background.png');
+    background-position: center;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+
+a{
+    text-decoration: none;
+}
+
+/* Menu */
+
+#logo{
+    width: 300px;    
+}
+
+.menu{
+    background: #001B2E;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-ligth-grey);
+    
+}
+
+.main-content{
+    max-width: 1200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.menu-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li a{
+    display: block;
+    padding: 15px;
+    color: var(--color-white);
+    position: relative;
+}
+
+
+.menu ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: var(--color-orange);
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover::after{
+    width: 50%;
+    left: 25%;
+}
+
+.menu-spacing{
+    height: 80px;
+}
+
+/* Seções */
+
+.blue-bg {
+    background: var(--color-blue);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.white-bg {
+    background: var(--color-white);
+    height: 100vh;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.main-bg{
+    background: rgba(218, 223, 231, 0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+/* Seção sobre */
+
+.secao-sobre {
+    background: var(--color-white);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+
+.sobre{
+    text-align: left;
+    margin: 0 auto;
+    
+    /* padding: 100px; */
+    color: var(--color-blue);
+}
+
+.sobre h1{
+    font-size: 40px;
+    color: var(--color-blue);
+}
+
+
+.sobre p{
+    font-size: 20px;
+    text-align: left;
+    padding: 20px;
+}
+
+.container-sobre{
+    max-width: 600px;
+    height: auto;
+    margin: 100px auto;
+    
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.image-porto{
+    height: auto;
+    max-width: 100%;
+    border-radius: 80px;
+    padding: 50px;
+}
+
+/* Secão Órgãos parceiros */
+
+.orgaos-parceiros h1{
+    color: var(--color-blue);
+    font-size: 40px;
+}
+
+
+.logos{
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between; 
+    
+}
+
+.logos a {
+    margin: 0;
+    padding: 20px;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.logos a:hover {
+    transform: scale(1.1); /* Aumenta a escala em 10% */
+}
+
+.logos img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Seção Página inicial */
+
+.form-container{
+    width: 90%;
+    height: auto;
+    margin: 100px auto;
+    margin-left: 150px;
+    margin-right: 150px;
+    background-color: var(--color-white);
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: var(--color-blue);
+  
+}
+
+.text{
+    display: grid;  
+    grid-template-columns: 1fr 1fr;  
+    align-items: center; 
+    justify-content: space-between; 
+
+}
+
+
+.bem-vindo{
+    text-align: center;
+    font-family: 'DM Sans', sans-serif; 
+}
+
+.text-bem-vindo{
+    text-align: left;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 40px;
+    margin-left: 0;    
+}
+
+
+.image-bg{
+    height: auto;
+    max-width: 100%;
+    border-radius: 30px;
+    padding: 20px;
+   
+}
+
+.hidden-image {
+    opacity: 0;
+    transform: translateY(20px); /* Começa levemente abaixo e aparece subindo */
+    transition: opacity 0.5s, transform 1s;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+
+footer{
+    
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
+
+.fale-conosco-footer{
+    text-align: center;
+    height: 100px;
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    
+}
+
+
+
+/* Objetivo, Missão e Valores */
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+
+.item{
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.item h4{
+    font-size: 30px;
+    padding: 20px;
+}
+
+

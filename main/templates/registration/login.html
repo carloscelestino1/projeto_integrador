@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+
+</head>
+<body>
+  <aside class="menu">
+    <section class="main-content menu-content">
+        <h1><a href="/"><img id="logo" src="../static/img/logo.png" alt=""></a></h1>
+    </section> 
+  </aside>
+  <div class="menu-spacing"></div>
+  <div class="form-container">
+
+    {% if form.errors %}
+      <p class="inválido">
+        Usuário ou senha inválidos. Tente novamente
+      </p>
+    {% endif %}
+
+    {% if next %}
+    {% if user.is_authenticated %}
+      <p class="acesso">
+        Sua conta não tem acesso a essa página. Para prosseguir,
+        por favor entre com uma conta que tenha acesso.
+      </p>
+    {% else %}
+      <p class="titulo">Login</p>
+    {% endif %}
+    {% endif %}
+    <div class="formulario">
+      <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td>{{ form.username.label_tag }}</td>
+          <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+          <td>{{ form.password.label_tag }}</td>
+          <td>{{ form.password }}</td>
+        </tr>
+      </table>
+      <input type="submit" value="login" />
+      <input type="hidden" name="next" value="{{ next }}" />
+      </form>  
+    </div>  
+  </div>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="{% static 'css/cadastro_pessoa.css' %}">
+</head>
+<body>
+    <aside class="menu">
+        <section class="main-content menu-content">
+            <h1><a href="/"><img id="logo" src="../static/img/logo.png" alt=""></a></h1>
+            
+        </section> 
+    </aside>
+
+    <div class="menu-spacing"></div>
+    
+    <div class="form-container">
+        <h2>Formulário de Cadastramento</h2>
+        <form method="POST">
+            {% csrf_token %}    
+            <div class="form-group">
+                <label>Nome:</label>
+                <input type="text" class="form-control" id="nome_cadastro" name="nome_cadastro">
+            </div>
+            <div class="form-group">
+                <label>Data de Nascimento:</label>
+                <input type="text" class="form-control" id="data_nascimento" name="data_nascimento">
+            </div>
+            <div class="form-group">
+                <label>RG:</label>
+                <input type="text" class="form-control" id="rg" name="rg">
+            </div>
+            <div class="form-group">
+                <label>CPF:</label>
+                <input type="text" class="form-control" id="cpf" name="cpf">
+            </div>
+            <div class="form-group">
+                <label>Idade:</label>
+                <input type="text" class="form-control" id="idade" name="idade">
+            </div>
+            <div class="form-group">
+                <label>Endereço:</label>
+                <input type="text" class="form-control" id="endereco" name="endereco">
+            </div>
+            <div class="form-group">
+                <label>Telefone:</label>
+                <input type="text" class="form-control" id="telefone" name="telefone">
+            </div>
+            <div class="form-group">
+                <label>Naturalidade:</label>
+                <input type="text" class="form-control" id="naturalidade" name="naturalidade">
+            </div>
+            <div class="form-group">
+                <label>Escolaridade:</label>
+                <input type="text" class="form-control" id="escolaridade" name="escolaridade">
+            </div>
+            <div class="form-group">
+                <label>Renda:</label>
+                <input type="text" class="form-control" id="renda" name="renda">
+            </div>
+            <div class="form-group">
+                <label>Estado Civil:</label>
+                <input type="text" class="form-control" id="estado_civil" name="estado_civil">
+            </div>
+            <div class="form-group">
+                <label>NIS:</label>
+                <input type="text" class="form-control" id="nis" name="nis">
+            </div>            
+
+            <a href="/cadastro_realizado"><button type="submit" class="btn btn-primary">Enviar</button></a>
+            <a href="/area_restrita" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Voltar</a>
+        </form>
+        {% if mensagem %}
+        <div class="error-mensage">
+            {{mensagem}}
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <section class="fale-conosco-footer">
+            <h3>Fale Conosco</h3>
+            <p>Tel: (81) 99999.9999</p>
+            <p>Email: techinclude@techinclude.com</p>   
+        </section>
+        <p>&copy; 2023 por TechInclude. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

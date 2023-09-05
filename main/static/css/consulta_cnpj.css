@@ -1,0 +1,208 @@
+:root{
+    --color-blue: rgb(0, 27, 46);
+    --color-white: #DBE0E7;
+    --color-orange: #FFA630;
+    --color-transparent: rgb(0, 27, 46);
+    --color-ligth-grey: #EEEEEE;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: var(--color-white);
+    font-family: 'Raleway', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Menu Cadastramento */
+
+#logo{
+    width: 300px;
+}
+
+.menu{
+    background: #001B2E;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-ligth-grey);
+    
+}
+
+.main-content{
+    max-width: 1200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.menu-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+.menu ul{
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li a{
+    display: block;
+    padding: 15px;
+    color: var(--color-white);
+    position: relative;
+}
+
+
+.menu ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: var(--color-orange);
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover::after{
+    width: 50%;
+    left: 25%;
+}
+
+/* Footer */
+
+footer{
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fale-conosco-footer{
+  text-align: center;
+  background-color: var(--color-white);
+  color: var(--color-blue);
+  
+  
+}
+
+/* Formulário */
+
+  
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center; /* Alinhamento vertical */
+    justify-content: center; /* Alinhamento horizontal */
+    min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos 100% da altura da viewport */
+  }
+  
+  /* Estilos para o formulário */
+
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-white);
+
+    margin-top: 100px; 
+    margin-bottom: 100px
+  }
+
+  .form-container h2{
+    color: var(--color-blue);
+    text-align: center;
+    padding: 20px;
+    
+
+  }
+  .form-group {
+    margin: 20px 0;
+  }
+  
+  .label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border: none;
+
+  }
+  
+  .btn-primary a{
+    color: var(--color-white);
+    border: none;
+
+  }
+
+  
+  .btn-primary a:hover {
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    border: none;
+    transition: all 200ms ease-in-out;
+
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    border: none;
+    transition: all 200ms ease-in-out;
+
+  }
+
+
+  .btn-outline-secondary {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #555;
+  }
+  
+  .btn-sm {
+    font-size: 12px;
+  }
+
+  .error-message{
+    padding: 20px;
+  }
+  
+  

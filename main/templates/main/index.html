@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,900&display=swap" rel="stylesheet">
+    <title>TechInclude</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<style>
+    body{
+        background-image: url('../static/img/background.png');
+        background-position: center;
+        height: 2800px;
+    }
+</style>    
+<body>
+    <aside class="menu">
+        <section class="main-content menu-content">
+            <h1><a href="#pagina-inicial"><img id="logo" src="../static/img/logo.png" alt=""></a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#pagina-inicial">Página Incial</a></li>
+                    <li><a href="#secao-sobre">Sobre</a></li>
+                    <li><a href="#secao-orgaos-parceiros">Órgãos Parceiros</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/area_restrita">Área Restrita</a></li>
+
+                </ul>
+            </nav>
+        </section> 
+    </aside>
+
+    <div class="menu-spacing"></div>
+
+    <section id="pagina-inicial" class="main-bg">
+        <div class="form-container">
+            <h3 class="bem-vindo"><strong>Bem-vindo ao Nosso Espaço de Inclusão no Porto Digital de Recife!</strong></h3>
+            <div class="text">               
+                <p class="text-bem-vindo">No coração pulsante da tecnologia e inovação, surge uma iniciativa que visa transcender barreiras e construir pontes para um futuro mais inclusivo e igualitário. É com grande entusiasmo que apresentamos o nosso projeto de Inclusão Social no renomado Porto Digital de Recife.
+                Abraçamos a diversidade como nossa maior vantagem, criando um ambiente propício para o crescimento coletivo. Com isso, buscamos parcerias estratégicas com empresas, instituições e mentores no Porto Digital e além, impulsionando um progresso sustentável ao criar oportunidades reais no mercado de trabalho e no cenário empreendedor. Juntos, estamos construindo um futuro inclusivo e colaborativo.
+                </p>
+                <img class="image-bg hidden-image" src="../static/img/image-bg2.jpeg" alt="">
+            </div>    
+        </div>
+        
+    </section>
+
+    <section id ="secao-sobre" class="white-bg secao-sobre">
+        <img class="image-porto" src="../static/img/portodigital.png" alt="">
+        <div class="sobre container-sobre" >
+        
+            <h1>Sobre a TechInclude</h1>
+            
+            <p>
+                Sistema integrador que possibilita a participação dos diversos atores que compõem o complexo do Porto Digital.
+                Nosso ponto de partida passa pela união dos setores público e privado, que em conjunto poderão incluir os frequentadores do bairro do Recife, e com isso permitir qualificação profissional, registro de carteira de trabalho, melhoria na segurança e um ambiente de negócio mais atrativo para novas empresas.   
+            </p>
+        </div>
+    </section>
+    
+    <section class="blue-bg">        
+        <div class="container">
+            <div class="item">
+                <h4>Objetivo</h4>
+                <p>
+                    O objetivo de criar um sistema de inclusão social no Porto Digital de Recife é garantir que todas as pessoas, independentemente de suas origens, tenham acesso a oportunidades. Isso promove diversidade, inovação e crescimento econômico, enquanto evita a exclusão social. O sistema envolve educação acessível, oportunidades de emprego e empreendedorismo para todos, e conscientização sobre preconceitos. Isso contribui para um ambiente mais igualitário e sustentável.
+                </p>
+            </div>
+            <div class="item">
+                <h4>Missão</h4>
+                <p>
+                    Nossa missão é simples e poderosa: transformar vidas por meio da tecnologia e da educação, criando oportunidades onde antes existiam obstáculos. Em um mundo cada vez mais interconectado e impulsionado pela inovação, acreditamos que ninguém deveria ser deixado para trás. Por isso, estamos comprometidos em oferecer acesso, aprendizado e crescimento a todos os membros da nossa comunidade, independentemente de suas origens, habilidades ou circunstâncias.
+                </p>
+            </div>
+            <div class="item">
+                <h4>Valores</h4>
+                <p>
+                    Nossos valores centrais são baseados em inovação sustentável, capacitação individual e colaboração significativa. Valorizamos a diversidade e promovemos um ambiente de respeito e transparência. Nosso compromisso é com o impacto social positivo, equidade e aprendizado contínuo. Demonstramos responsabilidade social e construímos uma comunidade envolvida e empática, buscando melhorar vidas por meio de nossas ações.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="secao-orgaos-parceiros" class="white-bg">
+        <div class="orgaos-parceiros">
+            <h1>Órgãos Parceiros</h1>
+            <div class="logos">            
+                <a href="https://www.pe.senac.br/"><img id="senac" src="../static/img/senac.png" alt=""></a>
+                <a href="https://www2.recife.pe.gov.br/"><img id="prefeitura" src="../static/img/prefeitura.png" alt=""></a>
+                <a href="https://www.portodigital.org/"><img id="porto-digital" src="../static/img/porto digital.png" alt=""></a>
+                <a href="https://www.pe.gov.br/"><img id="governo-pernambuco" src="../static/img/governo pernambuco.png" alt=""></a>
+            </div>  
+        </div>
+    </section>
+    <section class="fale-conosco-footer">
+        <h3>Fale Conosco</h3>
+        <p>Tel: (81)99999.9999</p>
+        <p>Email: techinclude@techinclude.com</p>   
+    </section>
+    
+ 
+        
+    <script src="../static/js/scripts.js"></script>
+
+    <footer>
+        <p>&copy; 2023 por TechInclude. Todos os direitos reservados.</p> 
+    </footer>
+  
+</body>
+
+
+
+</html>
