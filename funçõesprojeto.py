@@ -2,6 +2,7 @@ import sqlite3
 import requests
 import json
 import re
+from django.db import connection
 
 conn = sqlite3.connect('DatabaseProjeto.db', check_same_thread= False) #Conexão com o banco
 conn.row_factory = lambda cursor, row: row[0] #Retira os dados do banco das tuplas
@@ -118,35 +119,6 @@ def designar_trabalho(name, id_serv, id): # Define um trabalho a uma pessoa
     else: return False
     conn.commit()
 
-def delete(id_): # Deletar pessoa já cadastrada no banco
-    id = id_
-    query = cursor.execute(f"SELECT Id_Pessoa FROM main_cadastrados")
-    query_list = []
-    for i in query:
-        query_list.append(i)
-    
-    if id in query_list: # Verifica se a pessoa está cadastrada no banco através do ID
-        conn.execute(f'DELETE FROM main_cadastrados WHERE Id_Pessoa = {id}')
-        conn.execute(f'DELETE FROM main_empregados WHERE Id_Pessoa = {id}')
-
-    else: return False
-    conn.commit()
-
-def del_serv(id_serv): # Deletar serviço já cadastrado
-    id = id_serv
-    query = cursor.execute(f'SELECT Id_Serviço FROM main_servios')
-    query_list = []
-    for i in query:
-        query_list.append(i)
-    
-    if id in query_list: # Verifica se o trabalho está cadastrado no banco através do ID
-        conn.execute(f'DELETE FROM main_servios WHERE Id_Serviço = {id}')
-        conn.execute(f'DELETE FROM main_empregados WHERE Id_Serviço = {id}')
-    
-    else: return False
-    conn.commit()
-
-
 def consult_cnpj(cnpj): # Verfica se o cnpj é válido
     cnpj_= cnpj
     cnpj_ = re.sub(u'[^a-zA-Z0-9áéíóúÁÉÍÓÚâêîôÂÊÎÔãõÃÕçÇ: ]', '', cnpj_)
@@ -157,7 +129,6 @@ def consult_cnpj(cnpj): # Verfica se o cnpj é válido
     resp = json.loads(response.text)
 
     return(resp)
-    
 
 
 def save_infocnpj(cnpj, nome, local, tel, email): # Função de cadastro de Empresa no banco
@@ -187,3 +158,19 @@ def add_contato(nome1, email2, mensagem): # Função para entrar em contato com 
     cursor.execute(query)
 
     conn.commit()
+
+def tabela_servicos():
+    with connection.cursor() as cursor:
+        query = '''
+        SELECT main_cadastrados.nome as "Nome",
+               main_cadastrados.telefone as "Telefone",
+               main_servios.serviços as "Serviço",
+               main_foto_cadastrados.foto as "Foto"
+        FROM main_empregados
+        INNER JOIN main_cadastrados ON main_cadastrados.id_pessoa = main_empregados.id_pessoa
+        INNER JOIN main_servios ON main_servios.id_serviço = main_empregados.id_serviço
+        INNER JOIN main_foto_cadastrados ON main_foto_cadastrados.id = main_cadastrados.id_pessoa
+        '''
+        cursor.execute(query)
+        results = cursor.fetchall()
+        return results

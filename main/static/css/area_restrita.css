@@ -22,8 +22,9 @@ a{
     text-decoration: none;
 }
 
-h1{
+h1, h3{
     text-align: center;
+    padding: 10px;
 }
 
 /* Menu Cadastramento */
@@ -45,9 +46,9 @@ h1{
 }
 
 .main-content{
-    max-width: 1200px;
+    max-width: 2000px;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 0px;
     
 }
 
@@ -109,11 +110,9 @@ footer{
     text-align: center;
     background-color: var(--color-white);
     color: var(--color-blue);
-    height: 70%;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
+    
+    
+  }
 
 
 
@@ -128,7 +127,7 @@ footer{
 .form-container {
     width: 700px;
     margin: 0 auto;
-    margin-top: 150px;
+    margin-top: 50px;
     padding: 20px;
     background-color: #f7f7f7;
     border: 1px solid #ccc;
@@ -187,3 +186,4 @@ footer{
   display: flex;
   justify-content: center;
 }
+

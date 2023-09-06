@@ -47,7 +47,7 @@ a{
 }
 
 .main-content{
-    max-width: 1200px;
+    max-width: 1900px;
     margin-left: 20px;
     margin-right: 20px;
     
@@ -315,6 +315,34 @@ footer{
 .item h4{
     font-size: 30px;
     padding: 20px;
+}
+
+
+.btn {
+    display: flex;
+    padding: 10px 20px;
+    width: 150px;
+    margin: 10px;
+    font-size: 16px;
+    border: 2px solid #343a40;
+    border-radius: 30px;
+    background-color: var(--color-orange);
+    color: var(--color-blue);
+    font-size: 15px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    
+}
+
+
+    .btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-blue)
+}
+
+  .btn-list{
+    padding: 40px;
 }
 
 
